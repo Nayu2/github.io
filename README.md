@@ -1,4 +1,4 @@
-
+                        
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +16,29 @@
             <button class="no-btn">No</button>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js">
+    </script>const wrapper = document.querySelector(".wrapper");
+const question = document.querySelector(".question");
+const gif = document.querySelector(".gif");
+const yesBtn = document.querySelector(".yes-btn");
+const noBtn = document.querySelector(".no-btn");
+
+yesBtn.addEventListener("click", () => {
+  question.innerHTML = "YEEPEEEEE!!!";
+  gif.src =
+    "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
+});
+
+noBtn.addEventListener("mouseover", () => {
+  const noBtnRect = noBtn.getBoundingClientRect();
+  const maxX = window.innerWidth - noBtnRect.width;
+  const maxY = window.innerHeight - noBtnRect.height;
+
+  const randomX = Math.floor(Math.random() * maxX);
+  const randomY = Math.floor(Math.random() * maxY);
+
+  noBtn.style.left = randomX + "px";
+  noBtn.style.top = randomY + "px";
+});
 </body>
 </html>
